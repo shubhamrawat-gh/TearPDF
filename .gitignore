@@ -1,0 +1,23 @@
+# Rust
+target/
+src-tauri/target/
+
+# Node
+node_modules/
+dist/
+
+# Sidecar binaries (fetched via setup script, tens of MBs)
+src-tauri/sidecars/gs*
+src-tauri/sidecars/qpdf*
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# OS Junk
+.DS_Store
+Thumbs.db
+desktop.ini
