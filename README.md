@@ -55,17 +55,6 @@ TearPDF combines native Rust performance with sandboxed sidecar CLI engines to d
 
 ---
 
-## Technical Interface Design
-
-TearPDF features a dark technical instrument panel design system engineered for desktop utility:
-
-- Palette: Dark near-black surface (`#0b0b0d`), sharp signal cyan (`#2dd4e8`) active state highlights, and amber (`#f5a623`) pipeline execution indicators.
-- System Telemetry Header: Displays active CPU thread count, RAM allocation, system throughput, and local sandbox verification.
-- Typography: Inter display face paired with JetBrains Mono for all data fields, file sizes, and status metrics.
-- Grouped Navigation: Tab selector categorized into Core Operations and AI Automation modules with visual group dividers.
-
----
-
 ## Sidecar Security Safeguards
 
 TearPDF enforces multi-layered input validation to prevent command injection and unauthorized file access:
