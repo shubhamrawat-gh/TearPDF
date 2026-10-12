@@ -1,0 +1,18 @@
+* text=auto eol=lf
+*.pdf binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.p12 binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.wasm binary
+
+# Ignore all JavaScript files in a directory
+app/core/src/main/resources/static/pdfjs/* linguist-vendored
+app/core/src/main/resources/static/pdfjs/** linguist-vendored
+app/core/src/main/resources/static/css/bootstrap-icons.css linguist-vendored
+app/core/src/main/resources/static/css/bootstrap.min.css linguist-vendored
+app/core/src/main/resources/static/css/fonts/* linguist-vendored

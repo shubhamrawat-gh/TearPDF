@@ -1,0 +1,14 @@
+services:
+  tearpdf:
+    build: .
+    image: tearpdf:local
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - tearpdf-data:/app/data
+      - tearpdf-config:/app/configs
+      - ./documents:/documents
+    restart: unless-stopped
+volumes:
+  tearpdf-data:
+  tearpdf-config:

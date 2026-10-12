@@ -1,0 +1,8 @@
+import {useRef} from 'react';
+import {useVirtualizer} from '@tanstack/react-virtual';
+import type {DocumentType,LibraryDocument} from './api';
+export default function DocumentList({documents,types,open,change}:{documents:LibraryDocument[];types:DocumentType[];open:(doc:LibraryDocument)=>void;change:(doc:LibraryDocument,patch:object)=>void}){
+ const scroll=useRef<HTMLDivElement>(null);
+ const list=useVirtualizer({count:documents.length,getScrollElement:()=>scroll.current,estimateSize:()=>126,overscan:5});
+ return <div ref={scroll} style={{height:'calc(100dvh - 300px)',minHeight:250,overflow:'auto'}} aria-label="Library documents"><div style={{height:list.getTotalSize(),position:'relative'}}>{list.getVirtualItems().map(item=>{const doc=documents[item.index];return <div key={doc.id} style={{position:'absolute',top:0,left:0,width:'100%',transform:`translateY(${item.start}px)`}}><div className="tp-card" style={{margin:'5px 0',padding:12}}><button className="tp-doc" onClick={()=>open(doc)}><span><strong style={{maxWidth:'100%'}}>{doc.title}</strong><small>{doc.pages} pages · v{doc.current_version} · {Math.round(doc.confidence*100)}% confidence</small></span></button><div style={{display:'flex',gap:8}}><select className="tp-input" aria-label={`Type for ${doc.title}`} value={doc.type} onChange={e=>change(doc,{type:e.target.value})}>{types.map(t=><option key={t.name}>{t.name}</option>)}</select><input key={doc.id+doc.tags} className="tp-input" aria-label={`Tags for ${doc.title}`} defaultValue={doc.tags} placeholder="Tags, comma separated" onBlur={e=>{if(e.target.value!==doc.tags)change(doc,{tags:e.target.value});}}/></div></div></div>;})}</div></div>;
+}

@@ -1,0 +1,1 @@
+export function useLogoAssets(){return {favicon:'/tearpdf.svg',logo192:'/tearpdf.svg',manifestHref:'/manifest.json',tooltipLogo:'/tearpdf.svg',wordmark:{white:'/tearpdf-wordmark.svg',grey:'/tearpdf-wordmark.svg',black:'/tearpdf-wordmark.svg',dark:'/tearpdf-wordmark.svg',light:'/tearpdf-wordmark.svg'}};}

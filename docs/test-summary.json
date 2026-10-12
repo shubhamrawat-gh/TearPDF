@@ -1,0 +1,29 @@
+{
+  "fullJava": {
+    "common": {
+      "tests": 2190,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 24
+    },
+    "core": {
+      "tests": 3728,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 9
+    }
+  },
+  "fullFrontend": {
+    "files": 339,
+    "passed": 3639
+  },
+  "latestJavaTimestampWorkspaceRegression": {
+    "tests": 44,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "typecheck": "passed",
+  "productionFrontendBuild": "passed",
+  "cleanBackendPackage": "passed"
+}

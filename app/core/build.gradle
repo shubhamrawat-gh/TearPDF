@@ -1,0 +1,92 @@
+apply plugin: 'org.springframework.boot'
+
+import org.apache.tools.ant.taskdefs.condition.Os
+
+configurations {
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+}
+
+dependencies {
+
+
+
+
+    implementation project(':common')
+    implementation 'org.xerial:sqlite-jdbc:3.50.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-jetty'
+    implementation 'org.eclipse.jetty.http2:jetty-http2-server'
+    implementation 'org.eclipse.jetty:jetty-alpn-java-server'
+
+    implementation "commons-io:commons-io:$commonsIoVersion"
+    implementation "org.bouncycastle:bcprov-jdk18on:$bouncycastleVersion"
+    implementation "org.bouncycastle:bcpkix-jdk18on:$bouncycastleVersion"
+    implementation 'io.micrometer:micrometer-core'
+    implementation 'com.google.zxing:core:3.5.4'
+    implementation "org.commonmark:commonmark:$commonmarkVersion" // https://mvnrepository.com/artifact/org.commonmark/commonmark
+    implementation "org.commonmark:commonmark-ext-gfm-tables:$commonmarkVersion"
+    implementation "com.stirling:stirling-office-convert:$officeConvertVersion"
+    implementation "com.stirling:stirling-office-convert-legacy:$officeConvertVersion"
+    implementation "com.stirling:stirling-office-convert-topdf:$officeConvertVersion"
+    implementation "org.apache.pdfbox:preflight:$pdfboxVersion"
+    implementation "org.apache.pdfbox:xmpbox:$pdfboxVersion"
+
+    implementation 'org.verapdf:validation-model:1.30.2'
+    implementation "org.mozilla:rhino:${rhinoVersion}"
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'com.sun.xml.bind:jaxb-impl:2.3.9'
+    implementation 'com.sun.xml.bind:jaxb-core:4.0.9'
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+    implementation 'org.apache.pdfbox:jbig2-imageio:3.0.5'
+    implementation('com.opencsv:opencsv:5.12.0') {
+        exclude group: 'commons-beanutils', module: 'commons-beanutils'
+        exclude group: 'commons-collections', module: 'commons-collections'
+    }
+    implementation('org.apache.poi:poi-ooxml:5.5.1') {
+        exclude group: 'org.apache.commons', module: 'commons-math3'
+    }
+    implementation "org.apache.xmlgraphics:batik-bridge:${batikVersion}"
+    runtimeOnly "org.apache.xmlgraphics:batik-transcoder:${batikVersion}"
+    implementation 'de.rototor.pdfbox:graphics2d:3.0.5'
+    runtimeOnly "com.twelvemonkeys.imageio:imageio-batik:$imageioVersion"
+    runtimeOnly "com.twelvemonkeys.imageio:imageio-bmp:$imageioVersion"
+    runtimeOnly "com.twelvemonkeys.imageio:imageio-jpeg:$imageioVersion"
+    runtimeOnly "com.twelvemonkeys.imageio:imageio-tiff:$imageioVersion"
+    runtimeOnly "com.twelvemonkeys.imageio:imageio-webp:$imageioVersion"
+    runtimeOnly "com.twelvemonkeys.imageio:imageio-psd:$imageioVersion"
+}
+
+
+jar { enabled = false }
+springBoot { mainClass = 'tearpdf.software.SPDF.SPDFApplication' }
+bootJar {
+ enabled = true
+ archiveFileName = 'TearPDF.jar'
+ duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+ zip64 = true
+ exclude 'META-INF/*.SF', 'META-INF/*.DSA', 'META-INF/*.RSA', 'META-INF/*.EC'
+ manifest { attributes 'Implementation-Title': 'TearPDF', 'Implementation-Version': project.version, 'Enable-Native-Access': 'ALL-UNNAMED' }
+}
+def frontendDist = rootProject.file('frontend/editor/dist')
+tasks.named('processResources') {
+ inputs.dir(frontendDist).optional()
+ doLast {
+  if (frontendDist.exists()) { copy { from frontendDist; into layout.buildDirectory.dir('resources/main/static') } }
+ }
+}
+bootRun {
+ systemProperty 'spring.devtools.restart.enabled', 'false'
+ workingDir rootProject.projectDir
+}
+
+tasks.register('writeRuntimeDependencies') {
+    doLast {
+        def artifacts = configurations.runtimeClasspath.resolvedConfiguration.resolvedArtifacts.collect {
+            [coordinate: it.moduleVersion.id.toString(), file: it.file.absolutePath]
+        }.sort { it.coordinate }
+        def destination = rootProject.layout.buildDirectory.file('runtime-dependencies.json').get().asFile
+        destination.parentFile.mkdirs()
+        destination.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(artifacts))
+    }
+}

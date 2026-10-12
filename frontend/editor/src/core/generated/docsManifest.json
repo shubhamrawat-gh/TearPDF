@@ -1,0 +1,61 @@
+{
+  "source": {
+    "repo": "TearPDF",
+    "ref": "local",
+    "root": "docs"
+  },
+  "nav": [
+    {
+      "id": "overview",
+      "label": "Overview",
+      "icon": "▶",
+      "items": [
+        {
+          "id": "start",
+          "label": "Getting started"
+        }
+      ]
+    },
+    {
+      "id": "installation",
+      "label": "Installation",
+      "icon": "↓",
+      "items": [
+        {
+          "id": "run",
+          "label": "Run locally"
+        },
+        {
+          "id": "backups",
+          "label": "Backup guide"
+        }
+      ]
+    }
+  ],
+  "docs": {
+    "start": {
+      "id": "start",
+      "title": "Getting started",
+      "section": "overview",
+      "markdown": "TearPDF is a locally hosted web application. Import PDFs to begin. See the [Backup guide](doc:backups) for keeping a copy of your library.",
+      "sourcePath": "docs/start.md",
+      "editUrl": ""
+    },
+    "run": {
+      "id": "run",
+      "title": "Run locally",
+      "section": "installation",
+      "markdown": "Build the frontend, package the Java application, and run TearPDF.jar with Java 25. Open localhost:8080. Docker commands are in README.md.",
+      "sourcePath": "docs/run.md",
+      "editUrl": ""
+    },
+    "backups": {
+      "id": "backups",
+      "title": "Backup guide",
+      "section": "installation",
+      "markdown": "Stop TearPDF and copy the entire data/library directory, including the SQLite database and immutable PDF objects. Restore the directory before restarting.",
+      "sourcePath": "docs/backups.md",
+      "editUrl": ""
+    }
+  }
+}

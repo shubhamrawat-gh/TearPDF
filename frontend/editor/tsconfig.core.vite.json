@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@app/*": [
+        "./src/core/*"
+      ]
+    },
+    "allowImportingTsExtensions": true
+  },
+  "exclude": [
+    "src/proprietary",
+    "src/desktop",
+    "vite.config.ts"
+  ]
+}

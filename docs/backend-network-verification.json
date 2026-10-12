@@ -1,0 +1,8 @@
+{
+  "scope": "Established TCP snapshots for the final Java process during package API and browser checks",
+  "remoteAddresses": [
+    "127.0.0.1"
+  ],
+  "samples": 45,
+  "nonLoopbackAddresses": []
+}

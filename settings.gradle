@@ -1,0 +1,8 @@
+pluginManagement { repositories { gradlePluginPortal() } }
+plugins { id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0' }
+rootProject.name = 'TearPDF'
+gradle.ext.disableAdditional = true
+gradle.ext.enableSaas = false
+include 'tearpdf', 'common'
+project(':tearpdf').projectDir = file('app/core')
+project(':common').projectDir = file('app/common')

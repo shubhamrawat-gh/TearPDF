@@ -1,0 +1,10 @@
+{
+  "checks": [
+    "hash duplicate reuse",
+    "full-text search",
+    "real two-step pipeline, progress and export",
+    "version history and restore",
+    "stable watched-folder import and FTS",
+    "passcode rejects anonymous API and accepts local session"
+  ]
+}

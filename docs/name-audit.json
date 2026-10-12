@@ -1,0 +1,380 @@
+{
+  "scope": "tracked text files; generated and ignored folders excluded",
+  "matches": [
+    {
+      "path": "LICENSE",
+      "line": 3,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "README.md",
+      "line": 80,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "README.md",
+      "line": 82,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "app/common/build.gradle",
+      "line": 43,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/build.gradle",
+      "line": 82,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/BasicPdfMarkdownExtractor.java",
+      "line": 8,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/HeadingDetector.java",
+      "line": 9,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/HeadingDetector.java",
+      "line": 10,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/HeadingDetector.java",
+      "line": 11,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/HeadingDetector.java",
+      "line": 12,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 12,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 13,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 14,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 15,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 16,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 17,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 18,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 19,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownConverter.java",
+      "line": 20,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/main/java/tearpdf/software/common/pdf/PdfMarkdownExtractor.java",
+      "line": 6,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/jpdfium/JPDFiumSmokeTest.java",
+      "line": 14,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/pdf/PdfMarkdownConverterMoreTest.java",
+      "line": 18,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/pdf/PdfMarkdownConverterMoreTest.java",
+      "line": 19,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/pdf/PdfMarkdownConverterMoreTest.java",
+      "line": 20,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/pdf/PdfMarkdownConverterMoreTest.java",
+      "line": 21,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/pdf/PdfMarkdownConverterTest.java",
+      "line": 32,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/pdf/PdfMarkdownConverterTest.java",
+      "line": 33,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/common/src/test/java/tearpdf/software/common/pdf/PdfMarkdownConverterTest.java",
+      "line": 34,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/build.gradle",
+      "line": 29,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/build.gradle",
+      "line": 30,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/build.gradle",
+      "line": 31,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/MergeController.java",
+      "line": 56,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/MergeController.java",
+      "line": 57,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/MergeController.java",
+      "line": 58,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/MergeController.java",
+      "line": 59,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/MergeController.java",
+      "line": 60,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPDFController.java",
+      "line": 43,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPDFController.java",
+      "line": 44,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPdfByChaptersController.java",
+      "line": 49,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPdfByChaptersController.java",
+      "line": 50,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPdfByChaptersController.java",
+      "line": 64,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPdfByChaptersController.java",
+      "line": 68,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPdfByChaptersController.java",
+      "line": 125,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPdfBySizeController.java",
+      "line": 43,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/SplitPdfBySizeController.java",
+      "line": 44,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/converters/ConvertPDFToExcelController.java",
+      "line": 41,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/converters/ConvertPDFToExcelController.java",
+      "line": 42,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/RedactController.java",
+      "line": 52,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/RedactController.java",
+      "line": 53,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/RedactController.java",
+      "line": 54,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/RedactController.java",
+      "line": 55,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/TextRedactionService.java",
+      "line": 27,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/TextRedactionService.java",
+      "line": 28,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/TextRedactionService.java",
+      "line": 29,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/controller/api/security/TextRedactionService.java",
+      "line": 30,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/model/api/converters/ConvertPDFToMarkdown.java",
+      "line": 27,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/service/OfficeConversionService.java",
+      "line": 23,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/service/OfficeConversionService.java",
+      "line": 24,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/service/OfficeConversionService.java",
+      "line": 25,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/service/OfficeToPdfService.java",
+      "line": 18,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/service/OfficeToPdfService.java",
+      "line": 19,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/java/tearpdf/software/SPDF/service/OfficeToPdfService.java",
+      "line": 20,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/main/resources/static/3rdPartyLicenses.json",
+      "line": 441,
+      "classification": "dependency license notice"
+    },
+    {
+      "path": "app/core/src/main/resources/static/3rdPartyLicenses.json",
+      "line": 448,
+      "classification": "dependency license notice"
+    },
+    {
+      "path": "app/core/src/test/java/tearpdf/software/SPDF/model/api/converters/ConvertPDFToMarkdownTest.java",
+      "line": 29,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "app/core/src/test/java/tearpdf/software/SPDF/service/OfficeConversionServiceTest.java",
+      "line": 29,
+      "classification": "external dependency identifier"
+    },
+    {
+      "path": "frontend/editor/public/licenses/original.txt",
+      "line": 3,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/public/licenses/third-party.txt",
+      "line": 17672,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/public/licenses/third-party.txt",
+      "line": 17764,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/public/licenses/third-party.txt",
+      "line": 17856,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/public/licenses/third-party.txt",
+      "line": 17866,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/public/licenses/third-party.txt",
+      "line": 17876,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/public/licenses/third-party.txt",
+      "line": 17886,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/public/licenses/third-party.txt",
+      "line": 17888,
+      "classification": "attribution/license notice"
+    },
+    {
+      "path": "frontend/editor/src/core/workspace/Workspace.tsx",
+      "line": 75,
+      "classification": "attribution/license notice"
+    }
+  ]
+}

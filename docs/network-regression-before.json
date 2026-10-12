@@ -1,0 +1,11 @@
+{
+  "remoteAddresses": [
+    "127.0.0.1",
+    "216.168.244.9"
+  ],
+  "samples": 45,
+  "nonLoopbackAddresses": [
+    "216.168.244.9"
+  ],
+  "scope": "Established TCP snapshots for the packaged Java process during browser verification"
+}

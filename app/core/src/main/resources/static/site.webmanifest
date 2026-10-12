@@ -1,0 +1,14 @@
+{
+  "name": "TearPDF",
+  "short_name": "TearPDF",
+  "icons": [
+    {
+      "src": "/tearpdf.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#141418",
+  "background_color": "#141418",
+  "display": "standalone"
+}

@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "name": "220-page PDF import/viewer and responsive command palette",
+      "milliseconds": 4650
+    },
+    {
+      "name": "desktop library collapse"
+    },
+    {
+      "name": "real text comparison"
+    },
+    {
+      "name": "real visual comparison"
+    },
+    {
+      "name": "typed signature generated and stored locally"
+    }
+  ],
+  "pageErrors": []
+}

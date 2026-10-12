@@ -1,0 +1,14 @@
+.git
+.internal
+**/node_modules
+**/build
+**/dist
+.gradle
+data
+configs
+pipeline
+customFiles
+documents
+.env
+.env.*
+docs/screenshots

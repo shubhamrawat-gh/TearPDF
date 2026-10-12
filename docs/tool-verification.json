@@ -1,0 +1,116 @@
+[
+  {
+    "name": "merge",
+    "status": "passed",
+    "bytes": 2321,
+    "pages": 6,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "split",
+    "status": "passed",
+    "bytes": 1729
+  },
+  {
+    "name": "compress",
+    "status": "passed",
+    "bytes": 1602,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "rotate",
+    "status": "passed",
+    "bytes": 1607,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "pdf-to-image",
+    "status": "passed",
+    "bytes": 14424
+  },
+  {
+    "name": "image-to-pdf",
+    "status": "passed",
+    "bytes": 16749,
+    "pages": 1,
+    "producer": "TearPDF v0.1.0",
+    "creator": "TearPDF v0.1.0"
+  },
+  {
+    "name": "watermark",
+    "status": "passed",
+    "bytes": 4857,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "auto-redact",
+    "status": "passed",
+    "bytes": 204650,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "auto-redact-search-removal",
+    "status": "passed"
+  },
+  {
+    "name": "manual-redact",
+    "status": "passed",
+    "bytes": 262096,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "password",
+    "status": "passed",
+    "bytes": 2246
+  },
+  {
+    "name": "unlock-password",
+    "status": "passed",
+    "bytes": 1602,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "sanitize",
+    "status": "passed",
+    "bytes": 1621,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "metadata",
+    "status": "passed",
+    "bytes": 1589,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  },
+  {
+    "name": "ocr",
+    "status": "failed",
+    "error": "Error: 403: {\"timestamp\":\"2026-10-12T01:37:04.279Z\",\"status\":403,\"error\":\"Forbidden\",\"message\":\"This endpoint is disabled\",\"path\":\"/api/v1/misc/ocr-pdf\"}",
+    "environmentBlocked": true,
+    "reason": "Tesseract and OCRmyPDF are not installed on this machine"
+  },
+  {
+    "name": "certificate-sign",
+    "status": "passed",
+    "bytes": 22238,
+    "pages": 3,
+    "producer": "TearPDF",
+    "creator": "TearPDF"
+  }
+]
