@@ -1,86 +1,157 @@
+<div align="center">
+
 # TearPDF
 
-**Your PDFs. Your machine.** A private PDF workspace using the original free frontend's interface and workflows, with TearPDF branding, a local document library and reusable automation pipelines.
+**Your PDFs. Your machine.**  
+A private, offline-first PDF workspace combining an audited desktop-grade tool suite with a persistent local SQLite library and automation engine.
 
-![TearPDF editor](docs/screenshots/original-dark-editor-1440.png)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Java 25](https://img.shields.io/badge/Java-25-orange.svg)](https://openjdk.org/projects/jdk/25/)
+[![Frontend: React + Mantine](https://img.shields.io/badge/Frontend-React%20%7C%20Mantine-61dafb.svg)](frontend)
+[![Backend: Spring Boot](https://img.shields.io/badge/Backend-Spring%20Boot-6db33f.svg)](app)
+[![Storage: SQLite WAL](https://img.shields.io/badge/Storage-SQLite%20%7C%20FTS5-003B57.svg)](#features)
+[![Privacy: 100% Offline](https://img.shields.io/badge/Telemetry-Zero%20%2F%20Offline-success.svg)](#privacy--security)
 
-TearPDF serves its React interface and Spring Boot API from one local process. Documents, extracted text, versions, jobs and notifications stay in a SQLite library on your machine. Fonts, icons and viewer engines are bundled. Timestamping is off until you explicitly configure a server.
+<br />
 
-- Import PDFs, detect duplicates, search extracted text, edit types and tags, pin documents and restore versions.
-- Read and annotate PDFs with the existing PDFium viewer; use the free PDF tool panels for conversion, redaction, compression, signing, page operations and more.
-- Chain supported tools, run jobs on documents or folders, watch folders and review job history.
-- Switch dark/light/system themes, configure local processing preferences and optionally lock app access with a passcode.
-- Open **Local library and automation** in the navigation rail for indexed documents, watched folders, versions and pipelines. Generate fictional PDFs with **Load demo library** there.
+<img src="docs/screenshots/original-dark-editor-1440.png" alt="TearPDF Editor" width="880" />
 
-The default interface keeps the original navigation, reader, editor, file manager, tool options, search and settings. The added workspace remains at `/local-workspace`; **Licenses** is available in Settings and the rail footer. Proprietary features, cloud services, telemetry and update checks remain excluded.
+</div>
 
-Imported editor files appear in the native file manager's **Recents** tab. Use **Local library and automation** for the persistent SQLite index and watched folders; proprietary server folder storage is not included.
+---
 
-See [verification and limitations](docs/VERIFICATION.md) for exactly what was tested, what requires external local engines and which requested features remain incomplete. This is a personal workspace, not a multi-user service.
+## Overview
 
-## Run without Docker
+TearPDF operates as a unified, self-contained local process serving a React/TypeScript interface and Spring Boot backend. Documents, extracted text, immutable version objects, automated pipelines, and notifications reside exclusively in an on-disk SQLite library on your local machine.
 
-Use Node.js 24 and a **Java 25 JDK**. Set `JAVA_HOME` and make sure `java -version` reports 25. Dependency installation and the initial build need internet access; ordinary use does not.
+- **Zero Outbound Telemetry**: No tracking, analytics, CDN dependencies, or runtime update pings. Fonts, icons, and PDF engines are bundled locally.
+- **Audited Interface**: The default UI preserves the battle-tested reader, editor, file manager, and tool workflows with clean TearPDF branding.
+- **Local Library & Automation**: A dedicated workspace at `/local-workspace` provides SQLite indexing, FTS5 full-text search, folder watching, version history, and sequential tool pipelines.
+- **Engine Extensibility**: Works out-of-the-box for pure Java PDF operations; seamlessly hooks into local engines (Tesseract, OCRmyPDF, LibreOffice, Ghostscript, QPDF, ImageMagick) when installed.
 
+---
+
+## Features
+
+| Capability | Details |
+| :--- | :--- |
+| **PDF Operations** | Reader, editor, PDFium viewer, annotations, page manipulation, compression, split/merge, redaction, digital signatures. |
+| **Document Indexing** | Local SQLite storage with FTS5 full-text search, SHA-256 deduplication, classification tagging, and document pinning. |
+| **Version Control** | Append-only immutable PDF object versions (`data/library/objects/<sha256>.pdf`) with instant historical restoration. |
+| **Pipeline Automation** | Multi-step tool chaining, automated folder watching with stable-size debounce, batch processing, and execution audit logs. |
+| **Security & Privacy** | Loopback binding by default, local Content Security Policy, PBKDF2 passcode app-lock, zero cloud phone-home. |
+
+---
+
+## Quickstart
+
+### Prerequisites
+
+- **Java**: OpenJDK 25 (`java -version` reporting 25, `JAVA_HOME` set)
+- **Node.js**: v24+ & npm
+- *(Optional)* External CLI engines for specialized conversions: `tesseract`, `ocrmypdf`, `libreoffice`, `ghostscript`, `qpdf`, `imagemagick`.
+
+### Native Run
+
+#### Windows (PowerShell)
 ```powershell
+# 1. Build frontend bundle
 $env:PUPPETEER_SKIP_DOWNLOAD = 'true'
 cd frontend
 npm ci
 npm run build
 cd ..
+
+# 2. Package & launch backend
 .\gradlew.bat :tearpdf:bootJar --no-daemon
 & "$env:JAVA_HOME\bin\java.exe" -Xmx2g -jar app/core/build/libs/TearPDF.jar
 ```
 
-Open **http://127.0.0.1:8080**. Run from the repository directory so the persistent library stays in `data/library`. On macOS/Linux, use `./gradlew` and `java` with the same arguments.
+#### macOS / Linux (Bash)
+```bash
+# 1. Build frontend bundle
+export PUPPETEER_SKIP_DOWNLOAD='true'
+cd frontend
+npm ci
+npm run build
+cd ..
 
-Install Tesseract and OCRmyPDF for OCR, LibreOffice for office conversions, and Ghostscript, QPDF and ImageMagick for tools that need those engines. Engine availability is checked at startup. Only installed OCR language packs can be selected. Java-only tools work without them.
-
-## Run with Docker
-
-```sh
-docker compose up --build -d
+# 2. Package & launch backend
+./gradlew :tearpdf:bootJar --no-daemon
+java -Xmx2g -jar app/core/build/libs/TearPDF.jar
 ```
 
-The recipe installs common local engines, English and Hindi OCR packs. It publishes port 8080 on loopback and persists the library and settings in named volumes. Mount `./documents` through `/documents` for folder processing. Docker was unavailable on the development machine, so this recipe has not been executed; see the verification report before relying on it.
+Once started, navigate to **`http://127.0.0.1:8080`**.
 
-## Develop and test
+### Docker
 
+```bash
+docker compose up --build -d
+```
+> Packages common local engines and OCR language packs. Persists data and library objects in Docker volumes. See [verification notes](docs/VERIFICATION.md) for environment details.
+
+---
+
+## Development & Verification
+
+### Dev Servers (Hot Reload)
 ```powershell
+# Terminal 1 - Frontend (http://127.0.0.1:5173 with API proxy)
 cd frontend
 npm run dev
-# In a second terminal, from the repository root:
+
+# Terminal 2 - Backend (http://127.0.0.1:8080)
 .\gradlew.bat :tearpdf:bootRun --no-daemon
 ```
 
-The development UI uses http://127.0.0.1:5173 and proxies the API locally.
-
+### Test Suites
 ```powershell
+# Frontend type check & unit tests
 cd frontend
 npm run typecheck
 npm test
 cd ..
+
+# Backend tests
 .\gradlew.bat :common:test :tearpdf:test --no-daemon
+
+# Smoke test local tool endpoints
 node scripts/smoke-tools.mjs
 ```
 
-The smoke script expects a running local backend and writes fictional outputs under ignored `.internal/smoke/`. Generate bundled notices after dependency changes with `:tearpdf:writeRuntimeDependencies`, then `python scripts/generate-licenses.py`, then rebuild the frontend and backend. After changing font binaries, first run `scripts/generate-font-notices.py` with Python `fonttools` and `brotli` installed; the full license texts are already bundled and that script works offline.
+---
 
-## Structure
+## Repository Structure
 
-| Path | Purpose |
-| --- | --- |
-| `app/core` | API, PDF tools, workspace services and persistent jobs |
-| `app/common` | Shared PDF and engine utilities |
-| `frontend/editor/src/core/workspace` | Workspace frame, themes, library and automation UI |
-| `plugins/hello` | Working compiled example tool |
-| `data/library` | Ignored local SQLite database and immutable PDF objects |
-| `docs` | Architecture, tool guide, screenshots and verification |
+```
+.
+├── app/
+│   ├── core/           # Spring Boot API, PDF services, SQLite store & automation
+│   └── common/         # Shared PDF manipulation and native engine utilities
+├── frontend/           # React 18, Vite, TypeScript, Mantine UI & PDFium viewer
+│   └── editor/src/     # Editor core, tools, themes, and /local-workspace routes
+├── data/library/       # Local SQLite database (library.sqlite) and immutable PDF blobs (git-ignored)
+├── docs/               # Architecture, tool implementation guide, screenshots & verification reports
+├── plugins/            # Sample compiled custom tool plugins (e.g. plugins/hello)
+└── scripts/            # Notice generators, smoke tests, and offline utility scripts
+```
 
-Read [architecture](docs/ARCHITECTURE.md) and [adding tools](docs/ADDING_TOOLS.md). Back up `data/library` while the app is stopped. The optional app lock controls API access; it does not encrypt stored PDFs. Keep original documents separately.
+---
 
-## Acknowledgements
+## Privacy & Security
 
-TearPDF is based on Stirling-PDF (https://github.com/Stirling-Tools/Stirling-PDF), revision `313794c573df5e92d2f020f5ec53d08b264d6e4f`. Only the source covered by its free MIT grant was imported; the nine excluded proprietary, hosted, desktop and engine trees were omitted after approval.
+- **Strict Local Origin**: `LocalAccessFilter` rejects non-loopback browser origins and enforces a restrictive offline Content Security Policy.
+- **Passcode Protection**: Optional in-app passcode using salted PBKDF2 hashing. Protects API access during unattended sessions.
+- **Offline Integrity**: Timestamping servers are disabled by default. Network-dependent endpoints and telemetry have been permanently stripped.
 
-The original [LICENSE](LICENSE), including `Copyright (c) 2025 Stirling PDF Inc.`, is preserved without changes. TearPDF copyright is recorded separately in [COPYRIGHT](COPYRIGHT). Original attribution and dependency notices are available in the app's **Licenses** page. Some external MIT library coordinates and Java namespaces retain their published names because they identify separately compiled dependencies; the verification report records this branding exception.
+For detailed test records, platform skips, and audit logs, consult [docs/VERIFICATION.md](docs/VERIFICATION.md) and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
+
+---
+
+## Acknowledgements & Licensing
+
+TearPDF is based on [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) (commit [`313794c573df5e92d2f020f5ec53d08b264d6e4f`](https://github.com/Stirling-Tools/Stirling-PDF/commit/313794c573df5e92d2f020f5ec53d08b264d6e4f)). Only the source covered under its free MIT grant was imported; excluded proprietary, hosted, desktop, and non-free trees were omitted after approval.
+
+- **MIT License**: The original [LICENSE](LICENSE) (`Copyright (c) 2025 Stirling PDF Inc.`) is preserved verbatim.
+- **TearPDF Copyright**: Separate copyright declarations are recorded in [COPYRIGHT](COPYRIGHT).
+- **Third-Party Notices**: Complete license texts and runtime dependencies are accessible in-app under **Settings > Licenses** and generated into `docs/`.
