@@ -2,6 +2,16 @@
 
 Verified on Windows on 2026-10-12. This report distinguishes implemented behavior, reused tools and remaining requirements. A successful build does not certify every inherited PDF operation or every possible input file.
 
+## Original interface update
+
+At the owner's request, the default app now uses the audited free frontend's original frame, navigation, reader, editor, file manager, tool panels, command search, preferences and responsive layout with TearPDF branding. The earlier custom workspace is available from **Local library and automation** at `/local-workspace`; its SQLite data is preserved. A dedicated **Licenses** tab is available in Settings and the rail footer.
+
+The update passed TypeScript checking, the production frontend build, all 3,639 frontend tests in 339 files, and a clean Java 25 application package. Backend Java implementation was unchanged; the complete Java suite results below belong to the initial release. Browser checks and screenshots are recorded in `original-ui-verification.json`; the passcode overlay check is in `original-ui-lock-verification.json`.
+
+The packaged build was exercised at `http://127.0.0.1:8080`: PDF import, real compression, file-manager Recents, reader, command search, settings, licenses, dark/light desktop and narrow layouts, and navigation to the existing local library and automation. No browser page errors or outbound requests were observed. The local API returned 401 while locked and 200 after the UI unlocked it; the temporary test passcode was removed. OpenAPI, manifest and favicon branding passed, and unconfigured timestamping and URL imports still returned 403.
+
+Only the approved free interface was restored. Proprietary accounts, server folder storage, shared signing, cloud services, telemetry, update prompts and installation promotions remain excluded. The native file manager stores opened files in browser storage and shows them under Recents; server folder creation remains unavailable in this free build. Persistent indexed documents, watched folders and saved local pipelines remain in the additional workspace. Phone transfer cannot reach a server bound only to this machine's loopback interface. The existing local-engine and feature limitations below still apply.
+
 ## License scope and removals
 
 The owner approved the exclusion list before application source was imported. The root LICENSE is preserved byte-for-byte. Its lines 7–24 explicitly exclude the following trees from the MIT grant; each tree has its own restrictive license. None was imported.

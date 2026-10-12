@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — 2026-10-12
+
+- Restored the original free frontend's app frame, reader, editor, file manager, tool panels, search, preferences and responsive navigation with TearPDF branding.
+- Kept the indexed local library and automation workspace accessible from the navigation rail.
+- Added a dedicated Licenses settings tab, retained the passcode overlay, and replaced inherited legal links with local privacy information.
+
 ## 0.1.0 — 2026-10-12
 
 - Created a private local PDF workspace with a new three-pane frame.

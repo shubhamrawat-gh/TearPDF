@@ -1,0 +1,37 @@
+{
+  "title": "TearPDF",
+  "checks": [
+    "Upload PDF into original viewer",
+    "Compress through original tool options",
+    "Original file manager lists imported documents in Recents",
+    "Original reader",
+    "Original command search",
+    "Settings, licenses and editor at desktop/narrow sizes in both themes",
+    "Existing SQLite library remains accessible",
+    "Return from local workspace to original interface"
+  ],
+  "screenshots": [
+    "docs/screenshots/original-dark-editor-1440.png",
+    "docs/screenshots/original-dark-tool-1440.png",
+    "docs/screenshots/original-dark-files-1440.png",
+    "docs/screenshots/original-dark-reader-1440.png",
+    "docs/screenshots/original-dark-search-1440.png",
+    "docs/screenshots/original-dark-settings-1440.png",
+    "docs/screenshots/original-dark-licenses-1440.png",
+    "docs/screenshots/original-dark-settings-390.png",
+    "docs/screenshots/original-dark-licenses-390.png",
+    "docs/screenshots/original-dark-tools-390.png",
+    "docs/screenshots/original-dark-editor-390.png",
+    "docs/screenshots/original-light-settings-1440.png",
+    "docs/screenshots/original-light-licenses-1440.png",
+    "docs/screenshots/original-light-editor-1440.png",
+    "docs/screenshots/original-light-settings-390.png",
+    "docs/screenshots/original-light-licenses-390.png",
+    "docs/screenshots/original-light-tools-390.png",
+    "docs/screenshots/original-light-editor-390.png",
+    "docs/screenshots/original-local-automation-1440.png"
+  ],
+  "pageErrors": [],
+  "externalRequests": [],
+  "localRequestCount": 78
+}

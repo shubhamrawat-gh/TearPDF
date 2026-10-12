@@ -4,6 +4,7 @@ import type { IconName } from "@app/ui/Icon";
 // Single source of truth for all valid nav keys
 export const VALID_NAV_KEYS = [
   "preferences",
+  "licenses",
   "notifications",
   "connections",
   "account",

@@ -8,12 +8,12 @@
     },
     {
       "path": "README.md",
-      "line": 80,
+      "line": 84,
       "classification": "attribution/license notice"
     },
     {
       "path": "README.md",
-      "line": 82,
+      "line": 86,
       "classification": "attribution/license notice"
     },
     {
@@ -372,8 +372,8 @@
       "classification": "attribution/license notice"
     },
     {
-      "path": "frontend/editor/src/core/workspace/Workspace.tsx",
-      "line": 75,
+      "path": "frontend/editor/src/core/workspace/Licenses.tsx",
+      "line": 20,
       "classification": "attribution/license notice"
     }
   ]

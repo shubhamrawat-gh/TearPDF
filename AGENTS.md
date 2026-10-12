@@ -5,6 +5,7 @@ Use fresh Git history; never add an upstream remote or co-authors. Keep secrets 
 Audit licenses and obtain the owner's approval before removing excluded upstream components or importing application code.
 Preserve original license text and copyright notices. Keep attribution in LICENSE, the in-app Licenses page, and README Acknowledgements.
 Reuse the existing frontend stack. Bundle assets locally; disable telemetry and network-dependent features by default.
+The default UI must retain the audited free frontend's original interface and workflows with TearPDF branding. The additional SQLite library and automation workspace lives at /local-workspace. Do not replace the original frame with the earlier custom frame.
 Build and test after each major step. Record actual outcomes and unresolved limitations; do not claim unverified features.
 Ask before destructive changes outside this workspace.
 

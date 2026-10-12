@@ -1,4 +1,5 @@
 import {useEffect,useState} from 'react';
+import {Modal, PasswordInput, Button, Stack, Text} from '@mantine/core';
 import CertificateGenerator from './CertificateGenerator';
 import {api} from './api';
 export function LocalSettings({say}:{say:(message:string)=>void}) {
@@ -10,5 +11,5 @@ export function LockScreen(){
  const [locked,setLocked]=useState(false),[passcode,setPasscode]=useState(''),[error,setError]=useState('');
  useEffect(()=>{const check=()=>void api<{locked:boolean}>('/auth/status').then(s=>setLocked(s.locked));check();window.addEventListener('tearpdf-lock',check);return()=>window.removeEventListener('tearpdf-lock',check);},[]);
  if(!locked)return null;
- return <div className="tp-overlay" style={{zIndex:20000}}><form className="tp-dialog" onSubmit={e=>{e.preventDefault();void api('/auth/unlock','POST',{passcode}).then(()=>{setLocked(false);setPasscode('');location.reload();}).catch(()=>setError('Incorrect passcode'));}}><h1>TearPDF is locked</h1><p>Your documents are waiting, safely on this machine.</p><input autoFocus required type="password" className="tp-input" aria-label="App passcode" value={passcode} onChange={e=>setPasscode(e.target.value)}/><p role="alert">{error}</p><button className="tp-primary">Unlock workspace</button></form></div>;
+ return <Modal opened onClose={()=>{}} withCloseButton={false} closeOnClickOutside={false} closeOnEscape={false} title="TearPDF is locked" centered zIndex={20000}><form onSubmit={e=>{e.preventDefault();void api('/auth/unlock','POST',{passcode}).then(()=>{setLocked(false);setPasscode('');location.reload();}).catch(()=>setError('Incorrect passcode'));}}><Stack><Text>Your documents are waiting on this machine.</Text><PasswordInput autoFocus required label="App passcode" value={passcode} onChange={e=>setPasscode(e.target.value)}/><Text role="alert" c="red">{error}</Text><Button type="submit">Unlock workspace</Button></Stack></form></Modal>;
 }

@@ -1,8 +1,8 @@
 # TearPDF
 
-**Your PDFs. Your machine.** A private PDF workspace with a local document library, three-pane editor and reusable automation pipelines.
+**Your PDFs. Your machine.** A private PDF workspace using the original free frontend's interface and workflows, with TearPDF branding, a local document library and reusable automation pipelines.
 
-![TearPDF workspace](docs/screenshots/dark-library-1440.png)
+![TearPDF editor](docs/screenshots/original-dark-editor-1440.png)
 
 TearPDF serves its React interface and Spring Boot API from one local process. Documents, extracted text, versions, jobs and notifications stay in a SQLite library on your machine. Fonts, icons and viewer engines are bundled. Timestamping is off until you explicitly configure a server.
 
@@ -10,7 +10,11 @@ TearPDF serves its React interface and Spring Boot API from one local process. D
 - Read and annotate PDFs with the existing PDFium viewer; use the free PDF tool panels for conversion, redaction, compression, signing, page operations and more.
 - Chain supported tools, run jobs on documents or folders, watch folders and review job history.
 - Switch dark/light/system themes, configure local processing preferences and optionally lock app access with a passcode.
-- Generate fictional demo documents locally with **Settings → Load demo library**.
+- Open **Local library and automation** in the navigation rail for indexed documents, watched folders, versions and pipelines. Generate fictional PDFs with **Load demo library** there.
+
+The default interface keeps the original navigation, reader, editor, file manager, tool options, search and settings. The added workspace remains at `/local-workspace`; **Licenses** is available in Settings and the rail footer. Proprietary features, cloud services, telemetry and update checks remain excluded.
+
+Imported editor files appear in the native file manager's **Recents** tab. Use **Local library and automation** for the persistent SQLite index and watched folders; proprietary server folder storage is not included.
 
 See [verification and limitations](docs/VERIFICATION.md) for exactly what was tested, what requires external local engines and which requested features remain incomplete. This is a personal workspace, not a multi-user service.
 

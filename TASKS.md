@@ -1,5 +1,12 @@
 # TearPDF tasks
 
+## Original interface with TearPDF branding
+
+- [x] Restore the audited free frontend's original app frame, routes, reader, editor, file manager and settings.
+- [x] Keep the local library and automation accessible from the rail; preserve stored data.
+- [x] Keep local assets, passcode lock, offline restrictions and accessible license notices.
+- [x] Validate the restored interface, refresh screenshots and package the update.
+
 - [x] Inspect empty workspace and initialize fresh Git history.
 - [x] Audit pinned upstream source; record nine excluded trees and all 3,347 files under ignored .internal/.
 - [x] Obtain owner's approval of exclusions before importing or removing application code.

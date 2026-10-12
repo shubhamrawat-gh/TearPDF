@@ -5,6 +5,7 @@ import PreferencesSection, {
   type PreferencesSectionProps,
 } from "@app/components/shared/config/configSections/preferences/PreferencesSection";
 import AboutSection from "@app/components/shared/config/configSections/AboutSection";
+import Licenses from "@app/workspace/Licenses";
 import type {
   ConfigNavItem,
   ConfigNavSection,
@@ -91,7 +92,7 @@ export const useConfigNavSections = (
   const { t } = useTranslation();
 
   const sections: ConfigNavSection[] = [
-    createPreferencesNavSection(t),
+    createPreferencesNavSection(t, { hideAdminBanner: true, hideUpdateSection: true }),
     // Reference material: read once and rarely revisited, so it is one page
     // rather than four rows you have to open in turn.
     {
@@ -109,6 +110,13 @@ export const useConfigNavSections = (
           component: (
             <AboutSection isAdmin={_isAdmin} onRequestClose={onRequestClose} />
           ),
+        },
+        {
+          key: "licenses",
+          label: "Licenses",
+          description: "Original license and bundled dependency notices.",
+          icon: "file-text",
+          component: <Licenses />,
         },
       ],
     },

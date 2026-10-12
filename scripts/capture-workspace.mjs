@@ -11,7 +11,7 @@ page.on('pageerror',e=>errors.push(e.message));
 fs.mkdirSync('docs/screenshots',{recursive:true});
 const shot=async(name)=>{await page.waitForTimeout(400);await page.screenshot({path:`docs/screenshots/${name}.png`});};
 try{
- await page.goto(origin,{waitUntil:'networkidle'});
+ await page.goto(origin+'/local-workspace',{waitUntil:'networkidle'});
  const docs=await (await page.request.post(origin+'/api/v1/workspace/demo')).json();
  await page.reload({waitUntil:'networkidle'});
  await page.locator('.tp-doc').filter({hasText:docs[0].title}).first().click();
