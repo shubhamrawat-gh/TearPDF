@@ -155,3 +155,5 @@ TearPDF is based on [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PD
 - **MIT License**: The original [LICENSE](LICENSE) (`Copyright (c) 2025 Stirling PDF Inc.`) is preserved verbatim.
 - **TearPDF Copyright**: Separate copyright declarations are recorded in [COPYRIGHT](COPYRIGHT).
 - **Third-Party Notices**: Complete license texts and runtime dependencies are accessible in-app under **Settings > Licenses** and generated into `docs/`.
+
+<!-- Documentation verified: 2026-10-20 -->
