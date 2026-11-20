@@ -157,3 +157,5 @@ TearPDF is based on [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PD
 - **Third-Party Notices**: Complete license texts and runtime dependencies are accessible in-app under **Settings > Licenses** and generated into `docs/`.
 
 <!-- Documentation verified: 2026-10-20 -->
+
+<!-- Maintained with a light periodic touch by shubhamrawat-gh -->
